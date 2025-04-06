@@ -6,14 +6,14 @@ import contactRoutes from './routes/contact'
 dotenv.config()
 
 const app = express()
-const PORT = process.env.PROT || 3000
+const PORT = process.env.PORT || 3000
 
 app.use(cors())
 app.use(express.json())
 
-app.use('api/contact', contactRoutes)
+app.use('/api/contact', contactRoutes)
 
-app.get('api/helth', (req, res) => {
+app.get('/api/helth', (req, res) => {
     res.status(200).json({status: 'OK', message: 'API is running'})
 })
 
